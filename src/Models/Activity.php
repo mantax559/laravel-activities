@@ -63,7 +63,7 @@ class Activity extends Model
     {
         parent::boot();
 
-        static::resolveRelationUsing(config('laravel-activities.relationship_name'), function ($model) {
+        static::resolveRelationUsing(config('laravel-activities.user_relationship_name'), function ($model) {
             return $model->belongsTo(
                 config('laravel-activities.user_model'),
                 TableHelper::getForeignKey(config('laravel-activities.user_model'))
