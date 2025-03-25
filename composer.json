@@ -1,0 +1,44 @@
+{
+  "name": "mantax559/laravel-activities",
+  "description": "Laravel Activities",
+  "type": "library",
+  "license": "MIT",
+  "keywords": [],
+  "authors": [
+    {
+      "name": "mantax559"
+    }
+  ],
+  "require": {
+    "php": "^8.2",
+    "laravel/framework": "^10.0|^11.0",
+    "mantax559/laravel-helpers": "^1.0"
+  },
+  "require-dev": {
+    "laravel/pint": "^1.0",
+    "orchestra/testbench": "^8.0"
+  },
+  "autoload": {
+    "psr-4": {
+      "Mantax559\\LaravelActivities\\": "src"
+    },
+    "files": []
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Mantax559\\LaravelActivities\\": "tests"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Mantax559\\LaravelActivities\\Providers\\AppServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
