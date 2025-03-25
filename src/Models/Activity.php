@@ -59,6 +59,18 @@ class Activity extends Model
         $this->setTable(config('laravel-activities.table'));
     }
 
+    protected static function boot()
+    {
+        parent::boot();
+
+        static::resolveRelationUsing(config('laravel-activities.user_relationship_name'), function ($model) {
+            return $model->belongsTo(
+                config('laravel-activities.user_model'),
+                TableHelper::getForeignKey(config('laravel-activities.user_model'))
+            );
+        });
+    }
+
     protected function oldData(): Attribute
     {
         return Attribute::make(
