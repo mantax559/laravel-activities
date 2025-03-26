@@ -106,7 +106,9 @@ class ActivityService
                 $data[$newDataKey][$column] = $newValue;
             }
 
-            if (cmprstr($data[$oldDataKey][$column], $data[$newDataKey][$column])) {
+            if (is_array($data[$oldDataKey][$column]) && is_array($data[$newDataKey][$column]) && cmprarr($data[$oldDataKey][$column], $data[$newDataKey][$column])) {
+                unset($data[$oldDataKey][$column], $data[$newDataKey][$column]);
+            } elseif (cmprstr($data[$oldDataKey][$column], $data[$newDataKey][$column])) {
                 unset($data[$oldDataKey][$column], $data[$newDataKey][$column]);
             }
         }
