@@ -58,12 +58,12 @@ class ActivityService
 
     public static function truncateHtml(array|string|null $text): string
     {
-        if (empty($text) && ! cmprstr($text, 0)) {
-            return '-';
-        }
-
         if (is_array($text)) {
             $text = json_encode($text);
+        }
+        
+        if (empty($text) && ! cmprstr($text, 0)) {
+            return '-';
         }
 
         $text = strip_tags($text);
